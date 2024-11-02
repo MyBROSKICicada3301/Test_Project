@@ -1,0 +1,64 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.filters {
+    padding: 10px;
+    background-color: #ffcc00;
+    text-align: center;
+}
+
+.filters input, .filters button {
+    padding: 10px;
+    margin: 5px;
+}
+
+.train-status {
+    padding: 20px;
+}
+
+.train-status h2 {
+    margin-bottom: 10px;
+}
+
+.status-card {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.status-card.on-time {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+.status-card.delayed {
+    background-color: #ffcc00;
+}
+
+.status-card.canceled {
+    background-color: #ff6666;
+}

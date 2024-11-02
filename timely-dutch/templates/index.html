@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timely-Dutch Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Timely-Dutch</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Performance Metrics</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+    
+    <section class="filters">
+        <input type="text" placeholder="From" id="fromStation">
+        <input type="text" placeholder="To" id="toStation">
+        <input type="text" placeholder="Via" id="viaStation">
+        <button onclick="fetchTrainStatus()">Search</button>
+    </section>
+
+    <section class="train-status">
+        <h2>Real-Time Train Status</h2>
+        <p id="updateTime">Last Updated: <span id="time">--:--</span></p>
+        <div id="trainStatusContainer">
+            <!-- Dynamic content will be added here -->
+        </div>
+    </section>
+
+    <section class="performance">
+        <h2>Performance</h2>
+        <div class="performance-metrics">
+            <div>Average Delay Time</div>
+            <div>Train On-Time Percentage</div>
+            <div>Trending Hashtags</div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

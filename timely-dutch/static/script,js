@@ -1,0 +1,53 @@
+// Function to fetch and display train status
+function fetchTrainStatus() {
+    // Simulated data (replace with actual API call if available)
+    const trainData = [
+        { id: 1, from: "Amsterdam", to: "Rotterdam", status: "On-Time", time: "12:30 PM" },
+        { id: 2, from: "Utrecht", to: "The Hague", status: "Delayed", time: "1:00 PM" },
+        { id: 3, from: "Eindhoven", to: "Amsterdam", status: "Canceled", time: "1:45 PM" }
+    ];
+
+    // Get the container for train status
+    const trainStatusContainer = document.getElementById("trainStatusContainer");
+
+    // Clear previous content
+    trainStatusContainer.innerHTML = "";
+
+    // Loop through train data and create elements for each train
+    trainData.forEach(train => {
+        // Create status card
+        const statusCard = document.createElement("div");
+        statusCard.classList.add("status-card");
+        
+        // Add class based on train status
+        if (train.status === "On-Time") {
+            statusCard.classList.add("on-time");
+        } else if (train.status === "Delayed") {
+            statusCard.classList.add("delayed");
+        } else if (train.status === "Canceled") {
+            statusCard.classList.add("canceled");
+        }
+
+        // Populate status card with train details
+        statusCard.innerHTML = `
+            <h3>Train from ${train.from} to ${train.to}</h3>
+            <p>Status: ${train.status}</p>
+            <p>Departure: ${train.time}</p>
+        `;
+
+        // Append status card to the container
+        trainStatusContainer.appendChild(statusCard);
+    });
+
+    // Update the time display
+    updateTime();
+}
+
+// Function to update time display
+function updateTime() {
+    const timeElement = document.getElementById("time");
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    timeElement.textContent = `${hours}:${minutes}`;
+}
